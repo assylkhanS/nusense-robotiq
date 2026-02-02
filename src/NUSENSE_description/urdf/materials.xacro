@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<robot name="NUSENSE" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+<material name="mount_yellow">
+  <color rgba="0.92549 0.76863 0.25098 0.8"/>
+</material>
+
+<material name="blackish">
+  <color rgba="0.05882 0.05882 0.05098 0.71"/>
+</material>
+
+<material name="grayish">
+  <color rgba="0.73725 0.69020 0.69020 0.71"/>
+</material>
+
+
+</robot>

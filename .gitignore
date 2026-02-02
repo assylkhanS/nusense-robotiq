@@ -1,0 +1,34 @@
+# catkin / ROS build outputs
+build/
+devel/
+install/
+logs/
+.log/
+*.log
+*.bag
+*.bag.active
+*.bag.orig
+*.csv
+*.csv.gz
+*.npz
+*.npy
+*.pt
+*.pth
+*.onnx
+
+# images / videos / data dumps
+images/
+data/
+datasets/
+recordings/
+
+# python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# OS / IDE
+.DS_Store
+.idea/
+.vscode/

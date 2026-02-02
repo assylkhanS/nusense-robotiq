@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<robot name="nusense_case_test" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- bring in your macro -->
+  <xacro:include filename="$(find NUSENSE_description)/urdf/nusense_case.xacro"/>
+
+  <link name="world"/>
+
+  <!-- instantiate your case link -->
+  <xacro:nusense_case prefix="" link_name="nusense_case" scale="0.001 0.001 0.001"/>
+
+  <!-- mount it to world (tune this) -->
+  <joint name="world_to_nusense_case" type="fixed">
+    <parent link="world"/>
+    <child link="nusense_case"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+
+</robot>

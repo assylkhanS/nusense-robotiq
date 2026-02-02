@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- Optional: keep materials if you already have them -->
+  <xacro:include filename="$(find NUSENSE_description)/urdf/materials.xacro" />
+
+  <!-- Rigid case macro: one link, multiple visual meshes -->
+  <xacro:macro name="nusense_case" params="
+      prefix
+      link_name:='nusense_case'
+      scale:='0.001 0.001 0.001'
+    ">
+
+    <link name="${prefix}${link_name}">
+      <!-- INERTIAL: approximate as box -->
+      <inertial>
+        <origin xyz="-0.16482238182188297 -0.0002961685858999756 0.00025788233645894493" rpy="0 0 0"/>
+        <mass value="0.03501172063719372"/>
+        <inertia ixx="2.3e-05" iyy="1.5e-05" izz="1e-05" ixy="0" ixz="0" iyz="0"/>
+      </inertial>
+
+      <!-- VISUALS: -->
+
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://NUSENSE_description/meshes/base_link.stl" scale="${scale}"/>
+        </geometry>
+        <material name="blackish"/>
+      </visual>
+
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://NUSENSE_description/meshes/TOP_ROBOTIQ_v1_1.stl" scale="${scale}"/>
+        </geometry>
+        <material name="mount_yellow"/>
+      </visual>
+
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://NUSENSE_description/meshes/BOTTOM_ROBOTIQ_v1_1.stl" scale="${scale}"/>
+        </geometry>
+        <material name="mount_yellow"/>
+      </visual>
+
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://NUSENSE_description/meshes/Shell_LID_1.stl" scale="${scale}"/>
+        </geometry>
+        <material name="blackish"/>
+      </visual>
+
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://NUSENSE_description/meshes/Cap_LID_1.stl" scale="${scale}"/>
+        </geometry>
+        <material name="grayish"/>
+      </visual>
+
+      <!-- COLLISION:
+           Start simple: use ONE mesh (or later swap for a simplified convex hull / box). -->
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://NUSENSE_description/meshes/TOP_ROBOTIQ_v1_1.stl" scale="${scale}"/>
+        </geometry>
+      </collision>
+
+    </link>
+
+  </xacro:macro>
+
+</robot>
+

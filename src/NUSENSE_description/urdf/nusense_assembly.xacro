@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:include filename="$(find NUSENSE_description)/urdf/nusense_case.xacro"/>
+
+  <xacro:macro name="nusense_assembly" params="
+      prefix parent_link
+      mount_xyz:='0 0 0' mount_rpy:='0 0 0'
+      scale:='0.001 0.001 0.001'
+    ">
+
+    <xacro:nusense_case prefix="${prefix}" link_name="nusense_case" scale="${scale}"/>
+
+    <joint name="${prefix}nusense_mount_joint" type="fixed">
+      <parent link="${parent_link}"/>
+      <child link="${prefix}nusense_case"/>
+      <origin xyz="${mount_xyz}" rpy="${mount_rpy}"/>
+    </joint>
+
+  </xacro:macro>
+
+</robot>

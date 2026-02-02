@@ -1,0 +1,8 @@
+prefix=/home/robot/catkin_ws/devel
+
+Name: panda_moveit_config_robotiq
+Description: Description of panda_moveit_config_robotiq
+Version: 0.3.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
