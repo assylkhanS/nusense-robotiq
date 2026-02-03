@@ -13,5 +13,10 @@
   <color rgba="0.73725 0.69020 0.69020 0.71"/>
 </material>
 
+<material name="NUSENSE">
+  <texture filename="package://NUSENSE_description/urdf/textures/checkerboard_NUSENSE.png" />
+</material>
+
+<!-- to apply it onto future soft elasomer    -->
 
 </robot>
